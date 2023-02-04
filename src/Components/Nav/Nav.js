@@ -1,85 +1,89 @@
-import { useMediaQuery } from "react-responsive";
 import styled, { css, keyframes } from "styled-components";
 
+const NavKeyFrames = keyframes`
+  0%{
+    top:-80px;
+  }
+  100%{
+    top:0px;
+  }
+`;
+
+const NavAnimation = css`
+  ${NavKeyFrames} 0.3s;
+`
+
+const NavDiv = styled.div`
+  position: ${(props) => props.position};
+  background-color: ${(props) => props.background};
+  color: ${(props) => props.color};
+  animation: ${(props) => props.animation === true ? NavAnimation : 'none'};
+  top:0;
+  z-index:99;
+  width:100%;
+  height:80px;  
+`;
+
+const Logo = styled.svg`
+  width:auto;
+  height:55px;
+  position:absolute;
+  top:50%;
+  transform:translate(0,-50%);
+  left: 2%;
+  enable-background:new 0 0 833.25 392.83;
+`;
+
+const NavCenterUl = styled.ul`
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+  font-weight: bold;
+
+  @media (max-width: 980px){
+    gap: 30px;
+  }
+`;
+
+const NavCenterLi = styled.li`
+  text-align: center;
+`;
+
+const NavCenterSpan = styled.span`
+  color: #ffffff;
+  font-size: 12pt;
+  &:hover{
+    color:#467dad;
+  }
+
+  @media (max-width: 870px){
+    font-size: 11pt;
+  }
+`;
+
+const NavRightDiv = styled.div`
+  position:absolute;
+  top:50%;
+  right:2%;
+  transform:translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  gap: 19px;
+`;
+
+const NavRightIcon = styled.svg`
+  width:25px;
+  height:25px;
+  enable-background:new 0 0 64 64;
+`;
+
 function Nav( props ) {
-  const isMax980 = useMediaQuery({ maxWidth: 980 });
-  const isMax870 = useMediaQuery({ maxWidth: 870 });
-
-  const NavKeyFrames = keyframes`
-    0%{
-      top:-80px;
-    }
-    100%{
-      top:0px;
-    }
-  `;
-
-  const NavAnimation = css`
-    ${NavKeyFrames} 0.3s;
-  `
-
-  const NavDiv = styled.div`
-    position: ${props.position};
-    background-color: ${props.background};
-    color: ${props.color};
-    animation: ${props.animation === true ? NavAnimation : 'none'};
-    top:0;
-    z-index:99;
-    width:100%;
-    height:80px;  
-  `;
-
-  const Logo = styled.svg`
-    width:auto;
-    height:55px;
-    position:absolute;
-    top:50%;
-    transform:translate(0,-50%);
-    left: 2%;
-    enable-background:new 0 0 833.25 392.83;
-  `;
-
-  const NavCenterUl = styled.ul`
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    gap: ${isMax980 ? '30px' : '40px'};
-    flex-direction: row;
-    font-weight: bold;
-  `;
-
-  const NavCenterLi = styled.li`
-    text-align: center;
-  `;
-
-  const NavCenterSpan = styled.span`
-    color: #ffffff;
-    font-size: ${isMax870 ? '11pt' : '12pt'};
-    &:hover{
-      color:#467dad;
-    }
-  `;
-
-  const NavRightDiv = styled.div`
-    position:absolute;
-    top:50%;
-    right:2%;
-    transform:translateY(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 19px;
-  `;
-
-  const NavRightIcon = styled.svg`
-    width:25px;
-    height:25px;
-    enable-background:new 0 0 64 64;
-  `;
-
   return (
-    <NavDiv>
+    <NavDiv position={props.position} background={props.background} color={props.color} animation={props.animation}>
       <Logo className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
         <g className="sunrise_x5F_layer">
           <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>

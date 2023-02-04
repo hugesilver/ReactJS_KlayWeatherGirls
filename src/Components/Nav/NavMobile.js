@@ -1,85 +1,85 @@
 import { useState } from "react";
 import styled from "styled-components";
 
+const NavDiv = styled.div`
+  position: ${(props) => props.position};
+  background-color: ${(props) => props.background};
+  color: #000000;
+  top:0;
+  z-index:99;
+  width:100%;
+  height:80px;  
+`;
+
+const Logo = styled.svg`
+  width:auto;
+  height:55px;
+  position:absolute;
+  top:50%;
+  transform:translate(-50%,-50%);
+  left: 50%;
+  enable-background:new 0 0 833.25 392.83;
+`;
+
+const NavMobileDiv = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+`;
+
+const NavMobileLogo = styled.svg`
+  width: 25px;
+  height: 25px;
+  margin: 0 7px;
+  enable-background: new 0 0 64 64;
+  fill: #ffffff;
+  transition: all 0.3s ease-in-out;
+`;
+
+const NavMobileMenuDiv = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 430px;
+  top: 80px;
+  background-color: #75a0d0;
+  display: ${(props) => props.display};
+`;
+
+const NavMobileMenuUl = styled.ul`
+  width: 100%;
+  margin-top: 60px;
+`;
+
+const NavMobileMenuLi = styled.li`
+  font-family: 'NanumGothicBold';
+  width: 100%;
+  text-align:center;
+  margin:30px 0;
+  font-size:16pt;
+  font-weight:bold;
+`;
+
+const NavMobileMenuIconDiv = styled.div`
+  position: relative;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+`;
+
+const NavMobileMenuIconSvg = styled.svg`
+  width:25px;
+  height:25px;
+  margin:0 10px;
+  enable-background:new 0 0 64 64;
+`;
+
 function NavMobile( props ) {
-  const NavDiv = styled.div`
-    position: ${props.position};
-    background-color: ${props.background};
-    color: #000000;
-    top:0;
-    z-index:99;
-    width:100%;
-    height:80px;  
-  `;
-
-  const Logo = styled.svg`
-    width:auto;
-    height:55px;
-    position:absolute;
-    top:50%;
-    transform:translate(-50%,-50%);
-    left: 50%;
-    enable-background:new 0 0 833.25 392.83;
-  `;
-
-  const NavMobileDiv = styled.div`
-    position: absolute;
-    top: 50%;
-    right: 3%;
-    transform: translateY(-50%);
-  `;
-
   const [isOpen, setOpen] = useState('none');
 
-  const NavMobileLogo = styled.svg`
-    width: 25px;
-    height: 25px;
-    margin: 0 7px;
-    enable-background: new 0 0 64 64;
-    fill: #ffffff;
-    transition: all 0.3s ease-in-out;
-  `;
-
-  const NavMobileMenuDiv = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 430px;
-    top: 80px;
-    background-color: #75a0d0;
-    display: ${isOpen};
-  `;
-
-  const NavMobileMenuUl = styled.ul`
-    width: 100%;
-    margin-top: 60px;
-  `;
-
-  const NavMobileMenuLi = styled.li`
-    font-family: 'NanumGothicBold';
-    width: 100%;
-    text-align:center;
-    margin:30px 0;
-    font-size:16pt;
-    font-weight:bold;
-  `;
-
-  const NavMobileMenuIconDiv = styled.div`
-    position: relative;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 50px;
-  `;
-
-  const NavMobileMenuIconSvg = styled.svg`
-    width:25px;
-    height:25px;
-    margin:0 10px;
-    enable-background:new 0 0 64 64;
-  `;
-
   return (
-    <NavDiv>
+    <NavDiv position={props.position} background={props.background}>
       <Logo className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
         <g className="sunrise_x5F_layer">
           <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>
@@ -113,7 +113,7 @@ function NavMobile( props ) {
             }
         </NavMobileLogo>
       </NavMobileDiv>
-      <NavMobileMenuDiv>
+      <NavMobileMenuDiv display={isOpen}>
         <NavMobileMenuUl>
           <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>STORY</NavMobileMenuLi>
           <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>GALLERY</NavMobileMenuLi>
