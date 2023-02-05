@@ -23,7 +23,7 @@ const TopButtonSvg = styled.svg`
   @media (max-width: 620px){
     width: 50px;
   }
-  @media (max-width: 820px){
+  @media (max-width: 850px){
     &:hover{
       transform: none;
     }

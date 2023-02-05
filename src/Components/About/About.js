@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Waypoint } from "react-waypoint";
 import styled, { css, keyframes } from "styled-components";
@@ -283,8 +283,26 @@ const BuyOnOpenseaButton = styled.button`
   }
 `;
 
-function About() {
+function About(props) {
   const [balloonDisplay, setBalloonDisplay] = useState('none');
+  const EarthGlobeDivTop = useRef(null);
+
+  const balloontScrollEvent = useCallback(() => {
+    const {offsetTop} = EarthGlobeDivTop.current;
+    if (window.scrollY >= offsetTop){
+      setBalloonDisplay('inline');
+    }
+    else {
+      setBalloonDisplay('none');
+    }
+  }, [setBalloonDisplay]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", balloontScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", balloontScrollEvent);
+    }
+  }, [balloontScrollEvent]);
 
   return (
     <AboutDiv>
@@ -298,7 +316,8 @@ function About() {
         <BackgroundObjectImg className="floating" src="images/about/background_objects/planet.png" style={{width: "14.739583%", height: "auto", top: "26.7%", left: "10.7%", animationDelay: "0.5s"}} />
         <BackgroundObjectImg src="images/about/background_objects/yellowstar_right.png" style={{width: "3.90625%", height: "auto", top: "30%", right: "15.5%"}} />
       </div>
-      <EarthGlobeDiv ref={test}>
+      <EarthGlobeDiv ref={props.EarthGlobeDiv}>
+        <div ref={EarthGlobeDivTop}></div>
         <EarthGlobeImg />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "33%", left: "17%", animationDelay: "0s"}} />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "62%", left: "27%", animationDelay: "1s"}} />
@@ -314,7 +333,6 @@ function About() {
           Team WeatherGirls가 추구하는 가치는 누구나 즐길 수 있는 편안한 커뮤니티와 Klaytn 생태계 확장,<br />
           재미있는 콘텐츠를 통해 사람들을 하나로 모으는 것입니다.
         </DescriptionP>
-        <Waypoint onEnter={() => {setBalloonDisplay('inline');}}></Waypoint>
         <BuyOnOpenseaButton className="rainbow">Buy on Opensea</BuyOnOpenseaButton>
       </DescriptionDiv>
     </AboutDiv>

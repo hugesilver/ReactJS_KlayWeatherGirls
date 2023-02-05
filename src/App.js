@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,7 +8,6 @@ import Nav from './Components/Nav/Nav';
 import NavMobile from './Components/Nav/NavMobile';
 import About from './Components/About/About';
 import { useMediaQuery } from 'react-responsive';
-import { Waypoint } from 'react-waypoint';
 import TopButton from './Components/TopButton/TopButton';
 
 function App() {
@@ -27,29 +26,40 @@ function App() {
     return useMediaQuery({ maxWidth: 850 }) ? <NavMobile position={navPos} background={navBG} /> : <Nav position={navPos} background={navBG} color={navColor} animation={navAni} />
   }
 
+  const EarthGlobeDivTop = useRef(null);
+
+  const aboutScrollEvent = useCallback(() => {
+    const { offsetTop } = EarthGlobeDivTop.current;
+    if (window.scrollY >= offsetTop){
+      setNavPos('fixed');
+      setNavBG('#ffb8c2');
+      setNavColor('#000000');
+      setNavAni(true);
+
+      setTopButtonDisplay('block');
+    }
+    else {
+      setNavPos('absolute');
+      setNavBG('transparent');
+      setNavColor('#ffffff');
+      setNavAni(false);
+
+      setTopButtonDisplay('none');
+    }
+  }, [setNavPos, setNavBG, setNavColor, setNavAni, setTopButtonDisplay]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", aboutScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", aboutScrollEvent);
+    }
+  }, [aboutScrollEvent]);
+
+
   return (
     <div className="App">
       <Navigator />
-      <About />
-      <Waypoint
-          onEnter={() => {
-            setNavPos('fixed');
-            setNavBG('#ffb8c2');
-            setNavColor('#000000');
-            setNavAni(true);
-
-            setTopButtonDisplay('block');
-          }}
-          onLeave={() => {
-            setNavPos('absolute');
-            setNavBG('transparent');
-            setNavColor('#ffffff');
-            setNavAni(false);
-
-            setTopButtonDisplay('none');
-          }}
-        >  
-      </Waypoint>
+      <About EarthGlobeDiv={EarthGlobeDivTop}/>
       <TopButton display={topButtonDisplay} />
     </div>
   );
