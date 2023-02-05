@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const NavDiv = styled.div`
+const NavDiv = styled.nav`
   position: ${(props) => props.position};
   background-color: ${(props) => props.background};
   color: #000000;

@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Waypoint } from "react-waypoint";
 import styled, { css, keyframes } from "styled-components";
 import './About.css';
 
-const AboutDiv = styled.div`
+const AboutDiv = styled.section`
   position: relative;
   display: block;
   height: auto;

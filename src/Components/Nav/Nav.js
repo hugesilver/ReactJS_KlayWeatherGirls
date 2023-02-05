@@ -13,7 +13,7 @@ const NavAnimation = css`
   ${NavKeyFrames} 0.3s;
 `
 
-const NavDiv = styled.div`
+const NavDiv = styled.nav`
   position: ${(props) => props.position};
   background-color: ${(props) => props.background};
   color: ${(props) => props.color};
