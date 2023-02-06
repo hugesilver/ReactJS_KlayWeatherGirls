@@ -9,6 +9,7 @@ import NavMobile from './Components/Nav/NavMobile';
 import About from './Components/About/About';
 import { useMediaQuery } from 'react-responsive';
 import TopButton from './Components/TopButton/TopButton';
+import Story from './Components/Story/Story';
 
 function App() {
   useEffect(() => {
@@ -60,6 +61,7 @@ function App() {
     <div className="App">
       <Navigator />
       <About EarthGlobeDiv={EarthGlobeDivTop}/>
+      <Story />
       <TopButton display={topButtonDisplay} />
     </div>
   );

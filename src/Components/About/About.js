@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import styled, { css, keyframes } from "styled-components";
 import './About.css';
 
-const AboutDiv = styled.section`
+const AboutSection = styled.section`
   position: relative;
   display: block;
   height: auto;
@@ -159,6 +159,8 @@ return useMediaQuery({ maxWidth: 890 }) ?
 
 const RandomBalloon = ["sun", "rain", "cloud", "thunder", "snow"];
 
+/* 외부 CSS로 처리할 수 있지만 미래의 나를 위해... */
+
 const BalloonKeyframes = keyframes`
   0%{
     transform: scale(0);
@@ -176,7 +178,7 @@ const BalloonZoomInUp = css`
 `;
 
 const WeatherBalloon = styled.img`
-  display: ${(props) => props.display};
+  display: none;
   position: absolute;
   width: 5.72916666667%;
   height: auto;
@@ -286,15 +288,23 @@ function About(props) {
   const [balloonDisplay, setBalloonDisplay] = useState('none');
   const EarthGlobeDivTop = useRef(null);
 
+  const Balloon0 = useRef(null);
+  const Balloon500 = useRef(null);
+  const Balloon1000 = useRef(null);
+  const Balloon1500 = useRef(null);
+  const Balloon2000 = useRef(null);
+
   const balloontScrollEvent = useCallback(() => {
     const {offsetTop} = EarthGlobeDivTop.current;
     if (window.scrollY >= offsetTop){
       setBalloonDisplay('inline');
+      setTimeout(() => {Balloon0.current.style.display = balloonDisplay;}, 0);
+      setTimeout(() => {Balloon500.current.style.display = balloonDisplay;}, 500);
+      setTimeout(() => {Balloon1000.current.style.display = balloonDisplay;}, 1000);
+      setTimeout(() => {Balloon1500.current.style.display = balloonDisplay;}, 1500);
+      setTimeout(() => {Balloon2000.current.style.display = balloonDisplay;}, 2000);
     }
-    else {
-      setBalloonDisplay('none');
-    }
-  }, [setBalloonDisplay]);
+  }, [balloonDisplay]);
 
   useEffect(() => {
     window.addEventListener("scroll", balloontScrollEvent);
@@ -304,7 +314,7 @@ function About(props) {
   }, [balloontScrollEvent]);
 
   return (
-    <AboutDiv>
+    <AboutSection>
       <TitleImg src="images/about/title.png" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" />
       <Background />
       <div>
@@ -318,11 +328,11 @@ function About(props) {
       <EarthGlobeDiv ref={props.EarthGlobeDiv}>
         <div ref={EarthGlobeDivTop}></div>
         <EarthGlobeImg />
-          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "33%", left: "17%", animationDelay: "0s"}} />
-          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "62%", left: "27%", animationDelay: "1s"}} />
-          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{bottom: "16%", left: "15%", animationDelay: "2s"}} />
-          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "35.5%", right: "17.5%", animationDelay: "0.5s"}} />
-          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} display={balloonDisplay} style={{top: "63%", right: "3%", animationDelay: "1.5s"}} />
+          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon0} style={{top: "33%", left: "17%"}} />
+          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon1000} style={{top: "62%", left: "27%"}} />
+          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon2000} style={{bottom: "16%", left: "15%"}} />
+          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon500} style={{top: "35.5%", right: "17.5%"}} />
+          <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon1500} style={{top: "63%", right: "3%"}} />
       </EarthGlobeDiv>
       <DescriptionDiv>
         <DescriptionBigP>“지구에 가보자!”</DescriptionBigP>
@@ -334,7 +344,7 @@ function About(props) {
         </DescriptionP>
         <BuyOnOpenseaButton className="rainbow">Buy on Opensea</BuyOnOpenseaButton>
       </DescriptionDiv>
-    </AboutDiv>
+    </AboutSection>
   );
 }
 
