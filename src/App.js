@@ -12,6 +12,7 @@ import { useMediaQuery } from 'react-responsive';
 import TopButton from './Components/TopButton/TopButton';
 import Story from './Components/Story/Story';
 import Gallery from './Components/Gallery/Gallery';
+import Roadmap from './Components/Roadmap/Roadmap';
 
 const BridgeSection = styled.section`
   position: relative;
@@ -79,6 +80,7 @@ function App() {
       <Story />
       <Gallery />
       <BridgeSection><BridgeImg src="images/bridge/bridge_gallery.png" /></BridgeSection>
+      <Roadmap />
       <TopButton display={topButtonDisplay} />
     </div>
   );

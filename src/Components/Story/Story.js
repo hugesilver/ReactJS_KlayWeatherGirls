@@ -132,26 +132,11 @@ const StoryCardBoldP = styled.p`
   }
 `;
 
-const StoryStickerImg1 = styled.img`
+const StoryStickerImg = styled.img`
   position: absolute;
   height: 4%;
-  left: 6%;
-  bottom: 3%;
   transition: transform 0.3s ease-in-out;
   transition-delay: 0s;
-
-  &:hover {
-    transform:scale(1.1) !important;
-  }
-`;
-
-const StoryStickerImg2 = styled.img`
-  position: absolute;
-  height: 4%;
-  right: 5%;
-  bottom: 1%;
-  transition:transform 0.3s ease-in-out;
-  transition-delay:0s;
 
   &:hover {
     transform:scale(1.1) !important;
@@ -196,8 +181,8 @@ function Story() {
           </StoryCardP>
         </StoryCardDiv>
       </StorySectionDiv>
-      <StoryStickerImg1 src="images/story/summer-sticker-1.png" />
-      <StoryStickerImg2 src="images/story/summer-sticker-2.png" />
+      <StoryStickerImg src="images/story/summer-sticker-1.png" style={{left: "6%", bottom: "3%"}} data-aos="zoom-in" data-aos-duration="500" />
+      <StoryStickerImg src="images/story/summer-sticker-2.png" style={{right: "5%", bottom: "1%"}} data-aos="zoom-in" data-aos-duration="500" />
     </StorySection>
   );
 }
