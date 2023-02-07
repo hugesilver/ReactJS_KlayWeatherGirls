@@ -63,7 +63,7 @@ const SwiperSlideImg = styled.img`
   }
 `;
 
-const SwiperSlideSvg = styled.svg`
+const SwiperSlideSvgRaw = styled.svg`
   position: absolute;
   display: none;
   width: 25%;
@@ -87,10 +87,18 @@ const SwiperSlideHoverDiv = styled.div`
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.5);
     filter: brightness(70%);
   }
-  &:hover ${SwiperSlideSvg}{
+  &:hover ${SwiperSlideSvgRaw}{
     display: block;
   }
 `;
+
+const SwiperSlideSvg = () => {
+  return (
+    <SwiperSlideSvgRaw version="1.1" className="button_play rainbow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
+      <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
+    </SwiperSlideSvgRaw>
+  );
+};
 
 const ShowVideoDiv = styled.div`
   position: fixed;
@@ -222,9 +230,7 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("raincoat")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-raincoat.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-4.png" /></SwiperSlide>
@@ -232,18 +238,14 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("demon")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-demon.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-7.png" /></SwiperSlide>
           <SwiperSlide onClick={() => onPlayClick("mermaid")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-mermaid.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-9.png" /></SwiperSlide>
@@ -251,9 +253,7 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("astronaut")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-astronaut.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-12.png" /></SwiperSlide>
@@ -261,9 +261,7 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("knight")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-knight.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-15.png" /></SwiperSlide>
@@ -271,9 +269,7 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("safari")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-safari.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-18.png" /></SwiperSlide>
@@ -281,9 +277,7 @@ function Gallery() {
           <SwiperSlide onClick={() => onPlayClick("blacktiger")}>
             <SwiperSlideHoverDiv>
               <SwiperSlideHoverImg className="rainbow" src="images/gallery/slide-blacktiger.png" />
-              <SwiperSlideSvg version="1.1" className="button_play" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
-                <path className="st0" d="M195.57,107.21L71.22,35.42c-9.68-5.59-21.79,1.4-21.79,12.58v143.59c0,11.18,12.1,18.17,21.79,12.58l124.35-71.79C205.26,126.78,205.26,112.8,195.57,107.21z"/>
-              </SwiperSlideSvg>
+              <SwiperSlideSvg />
             </SwiperSlideHoverDiv>
           </SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-21.png" /></SwiperSlide>
