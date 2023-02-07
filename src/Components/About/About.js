@@ -260,10 +260,7 @@ const BuyOnOpenseaButton = styled.button`
   border-radius: 40px;
   border: 2px solid #4260c2;
   background: #6388ff;
-  background: -moz-linear-gradient(top, #6388ff 0%, #6783e0 100%);
-  background: -webkit-linear-gradient(top, #6388ff 0%, #6783e0 100%);
   background: linear-gradient(to bottom, #6388ff 0%, #6783e0 100%);
-  -webkit-box-shadow: 0px 4px 10px 0px rgba(74,62,43,0.3); 
   box-shadow: 0px 4px 10px 0px rgba(74,62,43,0.3);
 
   color: #ffffff;

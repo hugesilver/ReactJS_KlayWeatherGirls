@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import styled from 'styled-components';
 import './Components/_Common/Svg-style.css';
 import './Components/_Common/Cursor.css';
 import Nav from './Components/Nav/Nav';
@@ -10,6 +11,20 @@ import About from './Components/About/About';
 import { useMediaQuery } from 'react-responsive';
 import TopButton from './Components/TopButton/TopButton';
 import Story from './Components/Story/Story';
+import Gallery from './Components/Gallery/Gallery';
+
+const BridgeSection = styled.section`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+`;
+
+const BridgeImg = styled.img`
+  width: 100%;
+  height: auto;
+`;
 
 function App() {
   useEffect(() => {
@@ -62,6 +77,8 @@ function App() {
       <Navigator />
       <About EarthGlobeDiv={EarthGlobeDivTop}/>
       <Story />
+      <Gallery />
+      <BridgeSection><BridgeImg src="images/bridge/bridge_gallery.png" /></BridgeSection>
       <TopButton display={topButtonDisplay} />
     </div>
   );
