@@ -137,6 +137,7 @@ const StoryStickerImg = styled.img`
   height: 4%;
   transition: transform 0.3s ease-in-out;
   transition-delay: 0s;
+  z-index: 2;
 
   &:hover {
     transform:scale(1.1) !important;

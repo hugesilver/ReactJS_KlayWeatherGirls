@@ -121,8 +121,8 @@ const VisitOurMediumButton = styled.button`
   margin-bottom: 8%;
   box-shadow:  0px 4px 10px 0px rgba(74,62,43,0.3);
 
-  color: #fff;
   font-family: 'yg-jalnan';
+  color: #fff;
   font-weight: bold;
   font-size: 16pt;
   transition: all 0.3s ease-in-out;
@@ -165,7 +165,7 @@ function Roadmap() {
         <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_4.png" className="rainbow" style={{top: "50.1%", right: "14.5%"}} />
         <RoadmapDoodleLastImg src="images/roadmap/roadmap_doodle_5.png"/>
       </RoadmapDiv>
-      <VisitOurMediumButton>Visit our Medium</VisitOurMediumButton>
+      <VisitOurMediumButton className="rainbow">Visit our Medium</VisitOurMediumButton>
       <RoadmapStickerImg src="images/roadmap/summer-sticker-3.png" style={{left: "4%", top: "11%"}} data-aos="zoom-in" data-aos-duration="500" />
       <RoadmapStickerImg src="images/roadmap/summer-sticker-4.png" style={{right: "3%", top: "19%"}} data-aos="zoom-in" data-aos-duration="500" />
       <RoadmapSticker3Img src="images/roadmap/summer-sticker-5.png" data-aos="zoom-in" data-aos-duration="500" />

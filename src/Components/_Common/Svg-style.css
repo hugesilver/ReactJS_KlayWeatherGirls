@@ -50,9 +50,9 @@
 .button_play .st0{fill:#ffffff;stroke:#000000;}
 
 /* Left Arrow */
-#arrow_left .st0{fill:#595757;}
-#arrow_left:hover .st0{fill:#fdfdfd;}
+.arrowLeft .st0{fill:#595757;}
+.arrowLeft:hover .st0{fill:#fdfdfd;}
 
 /* Right Arrow */
-#arrow_right .st0{fill:#595757;}
-#arrow_right:hover .st0{fill:#fdfdfd;}
+.arrowRight .st0{fill:#595757;}
+.arrowRight:hover .st0{fill:#fdfdfd;}

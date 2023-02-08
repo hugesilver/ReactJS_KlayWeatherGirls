@@ -37,7 +37,7 @@ const TitleImg = styled.img`
   }
 `;
 
-const SwiperGallery = styled.div`
+const SwiperGalleryDiv = styled.div`
   margin: 8% 0;
 
   @media (max-width: 1280px){
@@ -151,10 +151,11 @@ const ViewMoreOnOpenseaButton = styled.button`
   box-shadow: 0px 4px 10px 0px rgba(74,62,43,0.3);
   margin-bottom: 8%;
 
-  color:#fff;
-  font-weight:bold;
-  font-size:12pt;
-  transition:all 0.3s ease-in-out;
+  font-family: 'yg-jalnan';
+  color: #fff;
+  font-weight: bold;
+  font-size: 16pt;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     transform:scale(1.05);
@@ -195,7 +196,7 @@ function Gallery() {
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg src="images/gallery/title.png" />
       </div>
-      <SwiperGallery>
+      <SwiperGalleryDiv>
         <Swiper
           style={{overflow: "visible"}} // box-shadow 잘리는 것이 원하지 않으면 넣어주자.
           data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000"
@@ -285,7 +286,7 @@ function Gallery() {
           <SwiperSlide><SwiperSlideImg className="rainbow" src="images/gallery/slide-winter.png" /></SwiperSlide>
           <SwiperSlide><SwiperSlideImg src="images/gallery/slide-24.png" /></SwiperSlide>
         </Swiper>
-      </SwiperGallery>
+      </SwiperGalleryDiv>
       <ShowVideoDiv style={{display: showVideoDisplay}}>
         <ShowVideoCloseSvg className="rainbow" onClick={onClose} version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">
           <path d="M58.7,12.8L12.8,58.7c-2.5,2.5-6.3,2.9-8.4,0.8l0,0c-2.1-2.1-1.7-5.8,0.8-8.4L51.1,5.3c2.5-2.5,6.3-2.9,8.4-0.8l0,0C61.6,6.5,61.3,10.3,58.7,12.8z"/>
