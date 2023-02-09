@@ -14,6 +14,7 @@ import Story from './Components/Story/Story';
 import Gallery from './Components/Gallery/Gallery';
 import Roadmap from './Components/Roadmap/Roadmap';
 import Trailer from './Components/Trailer/Trailer';
+import Team from './Components/Team/Team';
 
 const BridgeSection = styled.section`
   position: relative;
@@ -83,7 +84,8 @@ function App() {
       <BridgeSection><BridgeImg src="images/bridge/bridge_gallery.png" /></BridgeSection>
       <Roadmap />
       <Trailer />
-      <BridgeSection><BridgeImg src="images/bridge/bridge_trailer.png" /></BridgeSection>
+      <BridgeSection style={{background: "#48ae6c"}}><BridgeImg src="images/bridge/bridge_trailer.png" /></BridgeSection>
+      <Team />
       <TopButton display={topButtonDisplay} />
     </div>
   );

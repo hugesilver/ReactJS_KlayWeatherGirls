@@ -291,7 +291,7 @@ function About(props) {
   const Balloon1500 = useRef(null);
   const Balloon2000 = useRef(null);
 
-  const balloontScrollEvent = useCallback(() => {
+  const balloonScrollEvent = useCallback(() => {
     const {offsetTop} = EarthGlobeDivTop.current;
     if (window.scrollY >= offsetTop){
       setBalloonDisplay('inline');
@@ -304,11 +304,11 @@ function About(props) {
   }, [balloonDisplay]);
 
   useEffect(() => {
-    window.addEventListener("scroll", balloontScrollEvent);
+    window.addEventListener("scroll", balloonScrollEvent);
     return () => {
-      window.removeEventListener("scroll", balloontScrollEvent);
+      window.removeEventListener("scroll", balloonScrollEvent);
     }
-  }, [balloontScrollEvent]);
+  }, [balloonScrollEvent]);
 
   return (
     <AboutSection>
