@@ -302,10 +302,10 @@ function Trailer() {
             nextEl: nextButton.current
           }}
           modules={[Navigation]}>
-          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube.com/embed/dFQP27ep-ac" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
-          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube.com/embed/BNOyiS3a64M" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
-          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube.com/embed/fspYA_jZE3g" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
-          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube.com/embed/ocAjG3XbJGg" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
+          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube-nocookie.com/embed/dFQP27ep-ac" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
+          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube-nocookie.com/embed/BNOyiS3a64M" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
+          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube-nocookie.com/embed/fspYA_jZE3g" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
+          <SwiperSlide style={{textAlign: "center", display: "flex"}}><SwiperSlideiFrame src="https://www.youtube-nocookie.com/embed/ocAjG3XbJGg" title="Youtube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowFullScreen /></SwiperSlide>
         </Swiper>
         <PrevButtonDiv ref={prevButton} className="rainbow">
           <svg className="arrowLeft" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 232.8 232.8" xmlSpace="preserve">
