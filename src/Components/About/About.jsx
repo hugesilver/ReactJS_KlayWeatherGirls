@@ -36,6 +36,9 @@ const TitleImg = styled.img`
   left: 0;
   transform: none !important;
 
+  @media (max-width: 980px){
+    height: 120px;
+  }
   @media (max-width: 890px){
     margin-top: 18%;
     width: 75%;
@@ -47,8 +50,17 @@ const TitleImg = styled.img`
     left: 50%;
     transform: translate(-50%, 0) !important;
   }
+  @media (max-width: 760px){
+    height: 100px;
+  }
+  @media (max-width: 620px){
+    height: 85px;
+  }
   @media (max-width: 600px){
     width: 85%;
+  }
+  @media (max-width: 470px){
+    height: 75px;
   }
 `;
 

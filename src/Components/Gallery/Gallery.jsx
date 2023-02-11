@@ -16,7 +16,7 @@ const GallerySection = styled.section`
 const TitleImg = styled.img`
   position: relative;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   width: auto;
   height: 130px;
 

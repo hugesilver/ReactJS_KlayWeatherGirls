@@ -16,6 +16,7 @@ import Roadmap from './Components/Roadmap/Roadmap';
 import Trailer from './Components/Trailer/Trailer';
 import Team from './Components/Team/Team';
 import Partners from './Components/Partners/Partners';
+import FAQ from './Components/FAQ/FAQ';
 
 const BridgeSection = styled.section`
   position: relative;
@@ -89,6 +90,7 @@ function App() {
       <Team />
       <Partners />
       <BridgeSection style={{background: "#ffffff"}}><BridgeImg src="images/bridge/bridge_partners.png" /></BridgeSection>
+      <FAQ />
       <TopButton display={topButtonDisplay} />
     </div>
   );

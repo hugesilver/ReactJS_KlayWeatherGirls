@@ -11,10 +11,23 @@ const TeamSection = styled.section`
 const TitleImg = styled.img`
   position: relative;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   width: auto;
   height: 130px;
   margin-top: 5%;
+
+  @media (max-width: 980px){
+    height: 120px;
+  }
+  @media (max-width: 760px){
+    height: 100px;
+  }
+  @media (max-width: 620px){
+    height: 85px;
+  }
+  @media (max-width: 470px){
+    height: 75px;
+  }
 `;
 
 const PartnersStoneOddDiv = styled.div`
@@ -323,6 +336,37 @@ const Stone31GrassImg = styled.img`
   }
 `;
 
+const MushroomStickerImg = styled.img`
+  position: absolute;
+  height: 11%;
+  right: 4%;
+  bottom: 12%;
+  z-index: 2;
+
+  transition: transform 0.3s ease-in-out;
+  transition-delay: 0s !important;
+
+  &:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+  }
+
+  @media (max-width: 1444px){
+    height: 10%;
+  }
+  @media (max-width: 1085px){
+    height: 11%;
+  }
+  @media (max-width: 980px){
+    height: 9%;
+  }
+  @media (max-width: 730px){
+    height: 9%;
+  }
+  @media (max-width: 440px){
+    height: 9%;
+  }
+`;
+
 const PartnersSticker1Img = styled.img`
   position: absolute;
   height: 12%;
@@ -410,6 +454,7 @@ function Partners() {
       <Stone20GrassImg src="images/partners/spring-sticker-grass.png" data-aos="zoom-in" data-aos-duration="500" />
       <Stone30GrassImg src="images/partners/spring-sticker-grass.png" data-aos="zoom-in" data-aos-duration="500" />
       <Stone31GrassImg src="images/partners/spring-sticker-grass.png" data-aos="zoom-in" data-aos-duration="500" />
+      <MushroomStickerImg src="images/partners/spring-sticker-mushroom.png" data-aos="zoom-in" data-aos-duration="500" />
     </TeamSection>
   );
 }
