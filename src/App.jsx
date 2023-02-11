@@ -3,8 +3,8 @@ import './App.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import styled from 'styled-components';
-import './Components/_Common/Svg-style.css';
-import './Components/_Common/Cursor.css';
+import './Common/Svg-style.css';
+import './Common/Cursor.css';
 import Nav from './Components/Nav/Nav';
 import NavMobile from './Components/Nav/NavMobile';
 import About from './Components/About/About';
@@ -17,6 +17,7 @@ import Trailer from './Components/Trailer/Trailer';
 import Team from './Components/Team/Team';
 import Partners from './Components/Partners/Partners';
 import FAQ from './Components/FAQ/FAQ';
+import Footer from './Components/Footer/Footer';
 
 const BridgeSection = styled.section`
   position: relative;
@@ -91,6 +92,7 @@ function App() {
       <Partners />
       <BridgeSection style={{background: "#ffffff"}}><BridgeImg src="images/bridge/bridge_partners.png" /></BridgeSection>
       <FAQ />
+      <Footer />
       <TopButton display={topButtonDisplay} />
     </div>
   );
