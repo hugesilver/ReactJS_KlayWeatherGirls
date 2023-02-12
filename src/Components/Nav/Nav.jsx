@@ -24,7 +24,7 @@ const NavDiv = styled.nav`
   height:80px;  
 `;
 
-const Logo = styled.svg`
+const LogoSvg = styled.svg`
   width:auto;
   height:55px;
   position:absolute;
@@ -84,7 +84,7 @@ const NavRightIcon = styled.svg`
 function Nav( props ) {
   return (
     <NavDiv position={props.position} background={props.background} color={props.color} animation={props.animation}>
-      <Logo className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
+      <LogoSvg className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
         <g className="sunrise_x5F_layer">
           <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>
           <line className="st0" x1="422.78" y1="35.44" x2="414" y2="49.65"/>
@@ -103,7 +103,7 @@ function Nav( props ) {
             C196.36,136.68,189.26,96.39,159.66,92.66z"/>
           <path className="st2" d="M605.23,265.39c0,0-58.46,15.62-55.54-41.3c0,0-4.46-43.26,105.4-34.73"/>
         </g>
-      </Logo>
+      </LogoSvg>
       <div>
         <NavCenterUl>
           <NavCenterLi className="rainbow"><NavCenterSpan>STORY</NavCenterSpan></NavCenterLi>
