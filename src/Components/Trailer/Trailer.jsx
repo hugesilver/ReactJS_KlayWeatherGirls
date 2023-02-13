@@ -318,7 +318,7 @@ function Trailer() {
           </svg>
         </NextButtonDiv>
       </SwiperTrailerDiv>
-      <VisitOurYoutubeButton className="rainbow">Visit our Youtube</VisitOurYoutubeButton>
+      <VisitOurYoutubeButton className="rainbow" onClick={() => window.open('about:blank').location.href='https://www.youtube.com/channel/UCU7jA5XDiijAZgYIuOYonQw'}>Visit our Youtube</VisitOurYoutubeButton>
       <TrailerSticker1Img src="images/trailer/summer-sticker-7.png" data-aos="zoom-in" data-aos-duration="500" />
       <TrailerSticker2Img src="images/trailer/summer-sticker-8.png" data-aos="zoom-in" data-aos-duration="500" />
     </TrailerSection>

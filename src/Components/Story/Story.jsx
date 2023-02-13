@@ -1,3 +1,4 @@
+import { forwardRef, useRef } from "react";
 import styled from "styled-components";
 
 const StorySection = styled.section`
@@ -144,9 +145,9 @@ const StoryStickerImg = styled.img`
   }
 `;
 
-function Story() {
+const Story = ( props, ref ) => {
   return (
-    <StorySection>
+    <StorySection ref={ref}>
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg src="images/story/title.png" />
       </div>
@@ -188,4 +189,4 @@ function Story() {
   );
 }
 
-export default Story;
+export default forwardRef(Story);

@@ -3,7 +3,7 @@ import { Autoplay } from "swiper";
 import styled from "styled-components";
 import 'swiper/css';
 import './Gallery.css';
-import { useRef, useState } from 'react';
+import { forwardRef, useRef, useState } from 'react';
 
 const GallerySection = styled.section`
   position: relative;
@@ -166,7 +166,7 @@ const ViewMoreOnOpenseaButton = styled.button`
   }
 `;
 
-function Gallery() {
+const Gallery = ( props, ref ) => {
   const [showVideoDisplay, setShowVideoDisplay] = useState('none');
   const VideoRef = useRef(null);
 
@@ -192,7 +192,7 @@ function Gallery() {
   };
 
   return (
-    <GallerySection>
+    <GallerySection ref={ref}>
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg src="images/gallery/title.png" />
       </div>
@@ -294,9 +294,9 @@ function Gallery() {
         </ShowVideoCloseSvg>
         <ShowVideoVideo ref={VideoRef} onEnded={onClose} preload="none" src="" type="video/mp4" />
       </ShowVideoDiv>
-      <ViewMoreOnOpenseaButton className="rainbow">View more on Opensea</ViewMoreOnOpenseaButton>
+      <ViewMoreOnOpenseaButton className="rainbow" onClick={() => window.open('about:blank').location.href='https://opensea.io/collection/klayweathergirls'}>View more on Opensea</ViewMoreOnOpenseaButton>
     </GallerySection>
   );
 }
 
-export default Gallery;
+export default forwardRef(Gallery);

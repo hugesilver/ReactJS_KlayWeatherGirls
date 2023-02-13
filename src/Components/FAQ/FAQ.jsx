@@ -1,4 +1,4 @@
-import { memo, useRef, useState } from "react";
+import { forwardRef, memo, useRef, useState } from "react";
 import styled from "styled-components";
 
 const FAQSection = styled.section`
@@ -217,9 +217,9 @@ const FAQBlock = (props) => {
 
 const FAQAccodion = memo(FAQBlock);
 
-function FAQ() {
+const FAQ = ( props, ref ) => {
   return (
-    <FAQSection>
+    <FAQSection ref={ref}>
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg src="images/faq/title.png" />
       </div>
@@ -241,4 +241,4 @@ function FAQ() {
   );
 }
 
-export default FAQ;
+export default forwardRef(FAQ);

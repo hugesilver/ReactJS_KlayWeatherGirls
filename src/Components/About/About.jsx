@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled, { css, keyframes } from "styled-components";
 import './About.css';
@@ -293,7 +293,7 @@ const BuyOnOpenseaButton = styled.button`
   }
 `;
 
-function About(props) {
+const About = ( props, ref ) => {
   const [balloonDisplay, setBalloonDisplay] = useState('none');
   const EarthGlobeDivTop = useRef(null);
 
@@ -305,7 +305,7 @@ function About(props) {
 
   const balloonScrollEvent = useCallback(() => {
     const {offsetTop} = EarthGlobeDivTop.current;
-    if (window.scrollY >= offsetTop){
+    if (window.scrollY >= offsetTop && window.innerWidth >= 890){
       setBalloonDisplay('inline');
       setTimeout(() => {Balloon0.current.style.display = balloonDisplay;}, 0);
       setTimeout(() => {Balloon500.current.style.display = balloonDisplay;}, 500);
@@ -334,14 +334,15 @@ function About(props) {
         <BackgroundObjectImg className="floating" src="images/about/background_objects/planet.png" style={{width: "14.739583%", height: "auto", top: "26.7%", left: "10.7%", animationDelay: "0.5s"}} />
         <BackgroundObjectImg src="images/about/background_objects/yellowstar_right.png" style={{width: "3.90625%", height: "auto", top: "30%", right: "15.5%"}} />
       </div>
-      <EarthGlobeDiv ref={props.EarthGlobeDiv}>
-        <div ref={EarthGlobeDivTop}></div>
+      <EarthGlobeDiv ref={ref}>
+        <div ref={EarthGlobeDivTop}>
         <EarthGlobeImg />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon0} style={{top: "33%", left: "17%"}} />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon1000} style={{top: "62%", left: "27%"}} />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon2000} style={{bottom: "16%", left: "15%"}} />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon500} style={{top: "35.5%", right: "17.5%"}} />
           <WeatherBalloon src={`images/about/balloon/balloon_${RandomBalloon[Math.floor(Math.random() * RandomBalloon.length)]}.png`} ref={Balloon1500} style={{top: "63%", right: "3%"}} />
+        </div>
       </EarthGlobeDiv>
       <DescriptionDiv>
         <DescriptionBigP>“지구에 가보자!”</DescriptionBigP>
@@ -351,10 +352,10 @@ function About(props) {
           Team WeatherGirls가 추구하는 가치는 누구나 즐길 수 있는 편안한 커뮤니티와 Klaytn 생태계 확장,<br />
           재미있는 콘텐츠를 통해 사람들을 하나로 모으는 것입니다.
         </DescriptionP>
-        <BuyOnOpenseaButton className="rainbow">Buy on Opensea</BuyOnOpenseaButton>
+        <BuyOnOpenseaButton className="rainbow" onClick={() => window.open('about:blank').location.href='https://opensea.io/collection/klayweathergirls'}>Buy on Opensea</BuyOnOpenseaButton>
       </DescriptionDiv>
     </AboutSection>
   );
 }
 
-export default About;
+export default forwardRef(About);

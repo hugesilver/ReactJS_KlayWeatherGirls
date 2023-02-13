@@ -84,7 +84,7 @@ const NavRightIcon = styled.svg`
 function Nav( props ) {
   return (
     <NavDiv position={props.position} background={props.background} color={props.color} animation={props.animation}>
-      <LogoSvg className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
+      <LogoSvg onClick={() => {window.scroll({top: 0, behavior: 'smooth'})}} className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
         <g className="sunrise_x5F_layer">
           <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>
           <line className="st0" x1="422.78" y1="35.44" x2="414" y2="49.65"/>
@@ -106,11 +106,11 @@ function Nav( props ) {
       </LogoSvg>
       <div>
         <NavCenterUl>
-          <NavCenterLi className="rainbow"><NavCenterSpan>STORY</NavCenterSpan></NavCenterLi>
-          <NavCenterLi className="rainbow"><NavCenterSpan>GALLERY</NavCenterSpan></NavCenterLi>
-          <NavCenterLi className="rainbow"><NavCenterSpan>ROADMAP</NavCenterSpan></NavCenterLi>
-          <NavCenterLi className="rainbow"><NavCenterSpan>TEAM</NavCenterSpan></NavCenterLi>
-          <NavCenterLi className="rainbow"><NavCenterSpan>FAQ</NavCenterSpan></NavCenterLi>
+          <NavCenterLi className="rainbow" onClick={() => {window.scroll({top: props.section0, behavior: 'smooth'})}}><NavCenterSpan>STORY</NavCenterSpan></NavCenterLi>
+          <NavCenterLi className="rainbow" onClick={() => {window.scroll({top: props.section1, behavior: 'smooth'})}}><NavCenterSpan>GALLERY</NavCenterSpan></NavCenterLi>
+          <NavCenterLi className="rainbow" onClick={() => {window.scroll({top: props.section2, behavior: 'smooth'})}}><NavCenterSpan>ROADMAP</NavCenterSpan></NavCenterLi>
+          <NavCenterLi className="rainbow" onClick={() => {window.scroll({top: props.section3, behavior: 'smooth'})}}><NavCenterSpan>TEAM</NavCenterSpan></NavCenterLi>
+          <NavCenterLi className="rainbow" onClick={() => {window.scroll({top: props.section4, behavior: 'smooth'})}}><NavCenterSpan>FAQ</NavCenterSpan></NavCenterLi>
         </NavCenterUl>
       </div>
       <NavRightDiv>

@@ -80,7 +80,7 @@ function NavMobile( props ) {
 
   return (
     <NavDiv position={props.position} background={props.background}>
-      <Logo className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
+      <Logo onClick={() => {window.scroll({top: 0, behavior: 'smooth'})}} className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
         <g className="sunrise_x5F_layer">
           <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>
           <line className="st0" x1="422.78" y1="35.44" x2="414" y2="49.65"/>
@@ -115,11 +115,11 @@ function NavMobile( props ) {
       </NavMobileDiv>
       <NavMobileMenuDiv display={isOpen}>
         <NavMobileMenuUl>
-          <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>STORY</NavMobileMenuLi>
-          <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>GALLERY</NavMobileMenuLi>
-          <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>ROADMAP</NavMobileMenuLi>
-          <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>TEAM</NavMobileMenuLi>
-          <NavMobileMenuLi className="rainbow" onClick={isOpen === 'none' ? () => setOpen('block') : () => setOpen('none')}>FAQ</NavMobileMenuLi>
+          <NavMobileMenuLi className="rainbow" onClick={() => {window.scroll({top: props.section0, behavior: 'smooth'}); isOpen === 'none' ? setOpen('block') : setOpen('none')}}>STORY</NavMobileMenuLi>
+          <NavMobileMenuLi className="rainbow" onClick={() => {window.scroll({top: props.section1, behavior: 'smooth'}); isOpen === 'none' ? setOpen('block') : setOpen('none')}}>GALLERY</NavMobileMenuLi>
+          <NavMobileMenuLi className="rainbow" onClick={() => {window.scroll({top: props.section2, behavior: 'smooth'}); isOpen === 'none' ? setOpen('block') : setOpen('none')}}>ROADMAP</NavMobileMenuLi>
+          <NavMobileMenuLi className="rainbow" onClick={() => {window.scroll({top: props.section3, behavior: 'smooth'}); isOpen === 'none' ? setOpen('block') : setOpen('none')}}>TEAM</NavMobileMenuLi>
+          <NavMobileMenuLi className="rainbow" onClick={() => {window.scroll({top: props.section4, behavior: 'smooth'}); isOpen === 'none' ? setOpen('block') : setOpen('none')}}>FAQ</NavMobileMenuLi>
           <NavMobileMenuLi>
             <NavMobileMenuIconDiv>
               <NavMobileMenuIconSvg className="icon-opensea rainbow" onClick={() => window.open('about:blank').location.href='https://opensea.io/collection/klayweathergirls'} version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 64 64">

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const TeamSection = styled.section`
@@ -300,19 +300,19 @@ const TeamSticker2Img = styled.img`
   }
 `;
 
-function Team() {
-  const teamSection = useRef();
-  const titleImg = useRef();
-  const teammate1 = useRef();
-  const teammate2 = useRef();
-  const teammate3 = useRef();
-  const teammate4 = useRef();
-  const teammate5 = useRef();
-  const teammate6 = useRef();
-  const teammate7 = useRef();
-  const teammate8 = useRef();
-  const teammate9 = useRef();
-  const teammate10 = useRef();
+const Team = ( props, ref ) => {
+  const teamSection = useRef(null);
+  const titleImg = useRef(null);
+  const teammate1 = useRef(null);
+  const teammate2 = useRef(null);
+  const teammate3 = useRef(null);
+  const teammate4 = useRef(null);
+  const teammate5 = useRef(null);
+  const teammate6 = useRef(null);
+  const teammate7 = useRef(null);
+  const teammate8 = useRef(null);
+  const teammate9 = useRef(null);
+  const teammate10 = useRef(null);
 
   const [teammateDisplay, setTeammateDisplay] = useState('none');
 
@@ -336,7 +336,8 @@ function Team() {
   }, [teammateScrollEvent]);
 
   return (
-    <TeamSection ref={teamSection}>
+    <TeamSection ref={ref}>
+      <div ref={teamSection}></div>
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg ref={titleImg} src="images/team/title.png" />
       </div>
@@ -361,4 +362,4 @@ function Team() {
   );
 }
 
-export default Team;
+export default forwardRef(Team);

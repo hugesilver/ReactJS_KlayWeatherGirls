@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 
 const RoadmapSection = styled.section`
@@ -151,9 +152,9 @@ const RoadmapSticker3Img = styled.img`
   }
 `;
 
-function Roadmap() {
+const Roadmap = ( props, ref ) => {
   return (
-    <RoadmapSection>
+    <RoadmapSection ref={ref}>
       <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
         <TitleImg src="images/roadmap/title.png" />
       </div>
@@ -162,10 +163,10 @@ function Roadmap() {
         <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_1.png" className="rainbow" style={{top: "21.5%", right: "22%"}} />
         <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_2.png" className="rainbow" style={{top: "41.2%", left: "44.7%"}} />
         <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_3.png" className="rainbow" style={{top: "44%", left: "26.2%"}} />
-        <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_4.png" className="rainbow" style={{top: "50.1%", right: "14.5%"}} />
+        <RoadmapDoodleImg src="images/roadmap/roadmap_doodle_4.png" className="rainbow" onClick={() => window.open('about:blank').location.href='https://www.youtube.com/channel/UCU7jA5XDiijAZgYIuOYonQw'} style={{top: "50.1%", right: "14.5%"}} />
         <RoadmapDoodleLastImg src="images/roadmap/roadmap_doodle_5.png"/>
       </RoadmapDiv>
-      <VisitOurMediumButton className="rainbow">Visit our Medium</VisitOurMediumButton>
+      <VisitOurMediumButton className="rainbow" onClick={() => window.open('about:blank').location.href='https://medium.com/@KlayWeatherGirls'}>Visit our Medium</VisitOurMediumButton>
       <RoadmapStickerImg src="images/roadmap/summer-sticker-3.png" style={{left: "4%", top: "11%"}} data-aos="zoom-in" data-aos-duration="500" />
       <RoadmapStickerImg src="images/roadmap/summer-sticker-4.png" style={{right: "3%", top: "19%"}} data-aos="zoom-in" data-aos-duration="500" />
       <RoadmapSticker3Img src="images/roadmap/summer-sticker-5.png" data-aos="zoom-in" data-aos-duration="500" />
@@ -174,4 +175,4 @@ function Roadmap() {
   );
 }
 
-export default Roadmap;
+export default forwardRef(Roadmap);

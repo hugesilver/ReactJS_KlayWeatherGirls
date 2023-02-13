@@ -335,7 +335,7 @@ function Footer() {
           </li>
         </IconsUl>
       </IconsDiv>
-      <LogoDiv>
+      <LogoDiv onClick={() => {window.scroll({top: 0, behavior: 'smooth'})}}>
         <LogoSvg className="logo rainbow" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 833.25 392.83">
           <g className="sunrise_x5F_layer">
             <line className="st0" x1="382.21" y1="26.83" x2="382.21" y2="43.54"/>
