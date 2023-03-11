@@ -57,10 +57,8 @@ const TitleImg = styled.img`
     height: 85px;
   }
   @media (max-width: 600px){
-    width: 85%;
-  }
-  @media (max-width: 470px){
-    height: 75px;
+    width: 95%;
+    height: auto;
   }
 `;
 
