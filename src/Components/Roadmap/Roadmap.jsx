@@ -78,8 +78,8 @@ const RoadmapDiv = styled.div`
     width: 120%;
     margin-top: 18%;
     margin-bottom: 18%;
-    left: 50%;
-    transform: translate(-50%,0);
+    left: 50% !important;
+    transform: translate(-50%,0) !important;
   }
   @media (max-width: 370px){
     margin-top: 25%;
@@ -130,6 +130,9 @@ const VisitOurMediumButton = styled.button`
 
   &:hover {
     transform: scale(1.05);
+  }
+  @media (max-width: 1080px){
+    font-size: 14pt;
   }
 `;
 

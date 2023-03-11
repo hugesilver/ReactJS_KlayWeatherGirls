@@ -160,7 +160,10 @@ const ViewMoreOnOpenseaButton = styled.button`
   &:hover {
     transform:scale(1.05);
   }
-
+  
+  @media (max-width: 1080px){
+    font-size: 14pt;
+  }
   @media (max-width: 650px){
     margin-bottom: 10%;
   }

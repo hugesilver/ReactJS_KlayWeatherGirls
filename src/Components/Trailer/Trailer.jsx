@@ -249,6 +249,9 @@ const VisitOurYoutubeButton = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+  @media (max-width: 1080px){
+    font-size: 14pt;
+  }
 `;
 
 const TrailerSticker1Img = styled.img`

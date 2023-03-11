@@ -267,6 +267,7 @@ const DescriptionP = styled.p`
 `;
 
 const BuyOnOpenseaButton = styled.button`
+  font-family:'yg-jalnan';
   margin-top: 100px;
   padding:25px 45px;
   border-radius: 40px;
