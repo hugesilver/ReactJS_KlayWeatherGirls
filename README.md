@@ -1,4 +1,4 @@
-<img src="http://klayweathergirls.kro.kr/_img/meta/thumbnail.jpeg" />
+<img src="http://klayweathergirls.kro.kr/images/meta/thumbnail.jpeg" />
 http://klayweathergirls.kro.kr
 
 React.js 언어로 재구성하였습니다.<br>
