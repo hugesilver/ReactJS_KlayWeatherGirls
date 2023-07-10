@@ -1,5 +1,5 @@
-<img src="http://klayweathergirls.kro.kr/_img/meta/thumbnail.jpeg">
-https://klayweathergirls.kro.kr
+<img src="http://klayweathergirls.kro.kr/_img/meta/thumbnail.jpeg" />
+http://klayweathergirls.kro.kr
 
 React.js 언어로 재구성하였습니다.<br>
 WeatherGirls는 5000명의 호기심 많고 귀여운 소녀들로 다양한 날씨와 관련된 특성으로 구성되어 있습니다.<br>
